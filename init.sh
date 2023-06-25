@@ -38,4 +38,5 @@ command -v nvim &>/dev/null || \
 
 # 3. Install tailscale
 curl -fsSL https://tailscale.com/install.sh | sh
+sudo tailscale up
 ###############################################################################
