@@ -1,0 +1,13 @@
+#!/bin/bash
+
+set -e
+
+# Create .config directory if not exists
+[ -d ~/.config ] || mkdir ~/.config
+[ -d ~/.local/bin/ ] || mkdir -p ~/.local/bin/
+
+ln -s config/nvim ~/.config/nvim/
+ln -s config/tmux ~/.config/tmux/
+ln -s config/alacritty ~/.config/alacritty/
+ln -s local/bin/* ~/.local/bin/
+ln -s zshrc ~/.zshrc
