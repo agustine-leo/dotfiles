@@ -1,0 +1,27 @@
+[env]
+shell = "/usr/bin/zsh"
+
+[window]
+decorations = "None" # Full
+opacity = 0.8
+blur = true
+dimensions = { columns = 140, lines = 50 }
+startup_mode = "windowed"
+
+[font]
+normal = { family = "Hack Nerd Font", style = "Regular" }
+bold = { family = "Hack Nerd Font", style = "Bold" }
+italic = { family = "Hack Nerd Font", style = "Italic" }
+bold_italic = { family = "Hack Nerd Font", style = "BoldItalic" }
+size = 10
+
+[mouse]
+hide_when_typing = true
+
+[cursor]
+style = { blinking = "Always" }
+
+[colors]
+# cursor = { text = "0xf8f8f2", cursor = "0x44475a" }
+# selection = { foreground = "#000000", background = "#000000" }
+transparent_background_colors = true
