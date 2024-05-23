@@ -1,0 +1,4 @@
+#!/bin/bash
+
+gnome-screenshot -af /tmp/tmp_screenshot.png && \
+	wl-copy -ot image/png < /tmp/tmp_screenshot.png
