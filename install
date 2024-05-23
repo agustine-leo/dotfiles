@@ -6,8 +6,32 @@ set -e
 [ -d ~/.config ] || mkdir ~/.config
 [ -d ~/.local/bin/ ] || mkdir -p ~/.local/bin/
 
-ln -s config/nvim ~/.config/nvim/
-ln -s config/tmux ~/.config/tmux/
-ln -s config/alacritty ~/.config/alacritty/
-ln -s local/bin/* ~/.local/bin/
-ln -s zshrc ~/.zshrc
+# Install tools
+pkg_mgr=""
+command -v yum >&/dev/null && pkg_mgr="yum"
+command -v dnf >&/dev/null && pkg_mgr="dnf"
+command -v apt-get >&/dev/null && pkg_mgr="apt-get"
+
+function install_tool() {
+	tools=()
+	for tool in $1; do
+		command -v "$tool" &>/dev/null || \
+			tools+=("$tool")
+	done
+
+	[[ "${#tools[*]}" -gt 0 ]] && \
+		(sudo "$pkg_mgr" update -y;sudo "$pkg_mgr" install ${tools[*]} -y)
+}
+echo "Using package manager: $pkg_mgr"
+install_tool "git install_tool curl zsh tmux hello"
+
+# Link directory and files
+function link() {
+	ln -s "$1" "$2"
+}
+
+link config/nvim ~/.config/nvim/
+link config/tmux ~/.config/tmux/
+link config/alacritty ~/.config/alacritty/
+link local/bin/* ~/.local/bin/
+link zshrc ~/.zshrc
