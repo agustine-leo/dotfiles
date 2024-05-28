@@ -58,7 +58,7 @@ plugins=(
     # kubectl
     # gcloud
     # yarn
-    # fzf
+    fzf
     # minikube
 )
 
@@ -71,6 +71,24 @@ set editing-mode vi
 set keymap vi
 zstyle ':autocomplete:*' default-context history-incremental-search-backward
 KEYTIMEOUT=1
+
+# Directory search with fzf
+function fuzzy-search {
+  local dir
+  dir=$(find ~/ -type d -print | fzf )  # Adjust the starting directory as needed
+  if [[ -n "$dir" ]]; then
+    cd "$dir"
+    local precmd
+    for precmd in $precmd_functions; do
+        $precmd
+    done
+    zle reset-prompt
+  fi
+}
+
+zle -N fuzzy-search
+
+bindkey '^p' fuzzy-search
 # ====================================================
 
 ####### PATH & ENV Variable ########
