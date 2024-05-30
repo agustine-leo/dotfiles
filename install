@@ -23,15 +23,18 @@ function install_tool() {
 		(sudo "$pkg_mgr" update -y;sudo "$pkg_mgr" install ${tools[*]} -y)
 }
 echo "Using package manager: $pkg_mgr"
-install_tool "git install_tool curl zsh tmux hello"
+install_tool "git curl zsh tmux alacritty neovim"
+
+# Initialize ohmyzsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # Link directory and files
 function link() {
 	ln -s "$1" "$2"
 }
 
-link config/nvim ~/.config/nvim/
-link config/tmux ~/.config/tmux/
-link config/alacritty ~/.config/alacritty/
-link local/bin/* ~/.local/bin/
-link zshrc ~/.zshrc
+ln -s $(pwd)/config/nvim ~/.config/nvim/
+ln -s $(pwd)/config/tmux ~/.config/tmux/
+ln -s $(pwd)/config/alacritty ~/.config/alacritty/
+ln -s $(pwd)/local/bin/* ~/.local/bin/
+ln -s $(pwd)/zshrc ~/.zshrc
