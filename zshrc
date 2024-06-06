@@ -130,3 +130,7 @@ alias ls='exa'
 alias k="kubectl"
 alias cat="PAGER=cat bat --style=plain"
 #######################################
+
+# Ansible disable host key checking
+export ANSIBLE_HOST_KEY_CHECKING=False
+
