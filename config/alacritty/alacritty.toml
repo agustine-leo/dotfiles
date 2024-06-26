@@ -3,7 +3,7 @@ shell = "/usr/bin/zsh"
 
 [window]
 decorations = "None" # Full
-opacity = 0.8
+opacity = 0.9
 blur = true
 dimensions = { columns = 140, lines = 50 }
 startup_mode = "windowed"
