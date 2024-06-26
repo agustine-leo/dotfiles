@@ -33,8 +33,8 @@ function link() {
 	ln -s "$1" "$2"
 }
 
-ln -s $(pwd)/config/nvim ~/.config/nvim/
-ln -s $(pwd)/config/tmux ~/.config/tmux/
-ln -s $(pwd)/config/alacritty ~/.config/alacritty/
-ln -s $(pwd)/local/bin/* ~/.local/bin/
-ln -s $(pwd)/zshrc ~/.zshrc
+link "$PWD/config/nvim" ~/.config/nvim/
+link "$PWD/config/tmux" ~/.config/tmux/
+link "$PWD/config/alacritty" ~/.config/alacritty/
+link "$PWD/local/bin/*" ~/.local/bin/
+link "$PWD/zshrc" ~/.zshrc
