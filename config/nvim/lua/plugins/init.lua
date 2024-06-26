@@ -21,7 +21,7 @@ require("lazy").setup({
 	require("plugins.vim_multiple_cursors"),
 	require("plugins.themes"),
 	require("plugins.vim_be_good"),
-	-- require("plugins.harpoon"),
+	require("plugins.harpoon"),
 	require("plugins.tabline"),
 
 	-- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
