@@ -20,6 +20,7 @@ require("lazy").setup({
 	require("plugins.auto_pairs"),
 	require("plugins.vim_multiple_cursors"),
 	require("plugins.themes"),
+	require("plugins.vim_be_good"),
 	-- require("plugins.harpoon"),
 	require("plugins.tabline"),
 
