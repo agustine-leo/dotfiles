@@ -23,9 +23,9 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 
 -- Tabstop
-vim.opt.tabstop = 2 -- Always 8 (see :h tabstop)
-vim.opt.softtabstop = 2 -- What you expecting
-vim.opt.shiftwidth = 2 -- What you expecting
+-- vim.opt.tabstop = 2 -- Always 8 (see :h tabstop)
+-- vim.opt.softtabstop = 2 -- What you expecting
+-- vim.opt.shiftwidth = 2 -- What you expecting
 
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.opt.mouse = "a"
