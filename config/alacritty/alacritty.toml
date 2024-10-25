@@ -9,7 +9,7 @@ dimensions = { columns = 140, lines = 50 }
 startup_mode = "windowed"
 
 [font]
-normal = { family = "Hack Nerd Font", style = "Regular" }
+normal = { family = "Hack Nerd Font", style = "Bold" }
 bold = { family = "Hack Nerd Font", style = "Bold" }
 italic = { family = "Hack Nerd Font", style = "Italic" }
 bold_italic = { family = "Hack Nerd Font", style = "BoldItalic" }
@@ -25,3 +25,34 @@ style = { blinking = "Always" }
 # cursor = { text = "0xf8f8f2", cursor = "0x44475a" }
 # selection = { foreground = "#000000", background = "#000000" }
 transparent_background_colors = true
+
+# Colors (Gruvbox dark)
+
+# Default colors
+[colors.primary]
+# hard contrast background = = '#1d2021'
+background = '#282828'
+# soft contrast background = = '#32302f'
+foreground = '#ebdbb2'
+
+# Normal colors
+[colors.normal]
+black   = '#282828'
+red     = '#cc241d'
+green   = '#98971a'
+yellow  = '#d79921'
+blue    = '#458588'
+magenta = '#b16286'
+cyan    = '#689d6a'
+white   = '#a89984'
+
+# Bright colors
+[colors.bright]
+black   = '#928374'
+red     = '#fb4934'
+green   = '#b8bb26'
+yellow  = '#fabd2f'
+blue    = '#83a598'
+magenta = '#d3869b'
+cyan    = '#8ec07c'
+white   = '#ebdbb2'
