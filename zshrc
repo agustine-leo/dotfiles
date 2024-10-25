@@ -94,7 +94,7 @@ bindkey '^p' fuzzy-search
 ####### PATH & ENV Variable ########
 export GOPATH="$HOME/.go"
 export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PATH:/$HOME/.local/bin:$GOPATH/bin:$PYENV_ROOT/bin" # Local binary in USER
+export PATH="$PATH:/$HOME/.local/bin:$GOPATH/bin:$PYENV_ROOT/bin:$HOME/.cargo/bin/:$HOME/go/bin/" # Local binary in USER
 export EDITOR="/usr/bin/nvim"
 # =====================================================
 
@@ -124,13 +124,14 @@ alias t="/usr/bin/tmux"
 alias open="/usr/bin/xdg-open"
 alias lg="lazygit"
 alias iplocation="timeout 4 speedtest-cli  | timeout 5 grep 'Hosted'"
-alias k="/usr/local/bin/kubectl"
 alias pbcopy="xclip -sel clip"
 alias ls='exa'
-alias k="kubectl"
 alias cat="PAGER=cat bat --style=plain"
+alias less="bat --paging=always"
 #######################################
 
 # Ansible disable host key checking
 export ANSIBLE_HOST_KEY_CHECKING=False
 
+
+[[ -s "/home/leo/.gvm/scripts/gvm" ]] && source "/home/leo/.gvm/scripts/gvm"
