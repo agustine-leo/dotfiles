@@ -49,18 +49,10 @@ return {
 			end
 		end, { desc = "Toggle [N]eo[T]ree" })
 		-- move to right panel if neovim tree is open by using '<C-l>'
-		vim.keymap.set("n", "<C-l>", function()
+		vim.keymap.set("n", "<C-Space>l", function()
 			vim.cmd("wincmd l")
-			-- local is_tree_open = vim.fn.bufexists("NvimTree_1") == 1
-			--
-			-- if is_tree_open then
-			-- 	-- Move to the NvimTree buffer
-			-- 	vim.cmd("wincmd l")
-			-- else
-			-- 	-- Default behavior (move cursor to the right split)
-			-- end
 		end, { desc = "Move to right panel" })
-		vim.keymap.set("n", "<C-h>", function()
+		vim.keymap.set("n", "<C-Space>h", function()
 			vim.cmd("wincmd h")
 		end, { desc = "Move to left panel" })
 
