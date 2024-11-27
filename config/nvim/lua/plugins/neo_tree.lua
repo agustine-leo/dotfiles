@@ -28,7 +28,7 @@ return {
 					open_neotree(arg)
 				end
 			else
-				-- open_neotree()
+				open_neotree(".")
 			end
 		end
 
@@ -45,7 +45,7 @@ return {
 			if window_exists then
 				vim.cmd("Neotree close")
 			else
-				open_neotree()
+				open_neotree(".")
 			end
 		end, { desc = "Toggle [N]eo[T]ree" })
 
