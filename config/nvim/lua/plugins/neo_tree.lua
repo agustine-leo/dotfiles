@@ -11,7 +11,7 @@ return {
 		vim.g.nvim_tree_ignore = { ".git", "node_modules", ".cache" }
 
 		local function open_neotree(args)
-			-- vim.cmd("Neotree action=focus source=buffers position=bottom")
+			vim.cmd("Neotree action=focus source=buffers position=right")
 			-- vim.cmd("Neotree action=focus source=git_status position=right")
 			if args then
 				vim.cmd(string.format("Neotree %s action=focus source=filesystem position=left", args))
@@ -48,6 +48,21 @@ return {
 				open_neotree(".")
 			end
 		end, { desc = "Toggle [N]eo[T]ree" })
+		-- move to right panel if neovim tree is open by using '<C-l>'
+		vim.keymap.set("n", "<C-l>", function()
+			vim.cmd("wincmd l")
+			-- local is_tree_open = vim.fn.bufexists("NvimTree_1") == 1
+			--
+			-- if is_tree_open then
+			-- 	-- Move to the NvimTree buffer
+			-- 	vim.cmd("wincmd l")
+			-- else
+			-- 	-- Default behavior (move cursor to the right split)
+			-- end
+		end, { desc = "Move to right panel" })
+		vim.keymap.set("n", "<C-h>", function()
+			vim.cmd("wincmd h")
+		end, { desc = "Move to left panel" })
 
 		require("neo-tree").setup({
 			enable_git_status = true,
