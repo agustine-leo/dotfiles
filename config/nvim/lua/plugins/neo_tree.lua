@@ -11,7 +11,7 @@ return {
 		vim.g.nvim_tree_ignore = { ".git", "node_modules", ".cache" }
 
 		local function open_neotree(args)
-			vim.cmd("Neotree action=focus source=buffers position=right")
+			-- vim.cmd("Neotree action=focus source=buffers position=right")
 			-- vim.cmd("Neotree action=focus source=git_status position=right")
 			if args then
 				vim.cmd(string.format("Neotree %s action=focus source=filesystem position=left", args))
@@ -27,8 +27,8 @@ return {
 				if vim.fn.isdirectory(arg) == 1 then
 					open_neotree(arg)
 				end
-			else
-				open_neotree(".")
+				-- else
+				-- 	open_neotree(".")
 			end
 		end
 
